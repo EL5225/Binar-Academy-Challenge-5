@@ -1,4 +1,4 @@
-name: Deploy to Ralway DEV Environment
+name: Deploy to Ralway PROD Environment
 
 on:
   push:
