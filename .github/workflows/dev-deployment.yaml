@@ -24,7 +24,7 @@ jobs:
         run: npm install -g @railway/cli
 
       - name: Railway access
-        run: railway login
+        run: railway login --browserless
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_DEV_TOKEN }}
 
