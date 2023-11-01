@@ -54,3 +54,25 @@ model Transactions {
   amount                   Int
   createdAt                DateTime     @default(now())
 }
+
+model Employees {
+  id         Int               @default(autoincrement())
+  name       String
+  email      String            @unique
+  password   String
+  Profile    EmployeeProfiles? @relation(fields: [profilesId], references: [id])
+  profilesId Int?              @unique
+}
+
+model EmployeeProfiles {
+  id             Int        @id @default(autoincrement())
+  phoneNumber    String?    @unique
+  identityType   String?
+  identityNumber String?
+  gender         String?
+  religion       String?
+  address        String?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  Employees      Employees?
+}
