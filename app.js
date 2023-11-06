@@ -38,6 +38,7 @@ app.use(Sentry.Handlers.tracingHandler());
 
 // All your controllers should live here
 app.get("/", (req, res) => {
+  console.log(object);
   res.json({
     status: true,
     message: "Welcome to API, open api docs at /api/docs",
